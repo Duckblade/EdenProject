@@ -77,6 +77,7 @@ public class Clavier extends JPanel implements ActionListener{
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints cr= new GridBagConstraints();
 
+
 		String resourcesImagesPath = "src/main/resources/images/";
 
 		 aImg = new ImageIcon(getClass().getResource("/images/a.png"));
@@ -305,12 +306,6 @@ public class Clavier extends JPanel implements ActionListener{
 	    tabButtons[23]=x;
 	    tabButtons[24]=y;
 	    tabButtons[25]=z;
-	      
-	      
-	      
-	     
-	
-
 		
 	}
 

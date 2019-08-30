@@ -38,8 +38,12 @@ import java.util.List;
 		JButton btn1_accueil,btn2_accueil,btn3_accueil;
 		
 		//Instance de l'image de fond pour l'ecran titre
-		static ImageIcon fond = new ImageIcon("src/main/resources/images/bg.jpg");
+		static ImageIcon fond = new ImageIcon(Main.class.getResource("/images/bg.jpg"));
 		static JLabel fondLabel = new JLabel(fond);
+
+		//Instance de l'image de fond pour l'ecran titre
+		static ImageIcon fond2 = new ImageIcon(Main.class.getResource("/images/pnd1.jpg"));
+		static JLabel fondLabel2 = new JLabel(fond2);
 		
 		//Declaration du cardLayout utilise pour la transition entre les differentes fenetres de jeu
 		static CardLayout cardL ;
@@ -82,7 +86,7 @@ import java.util.List;
 		  
 		  
 	     super("Projet Eden");
-	     
+
 	    banqueCris=new ArrayList<String>();
 	 	banqueCris.add("/music/incapacitatedinjury09.wav");
 	    banqueCris.add("/music/incapacitatedinjury10.wav");
@@ -103,7 +107,7 @@ import java.util.List;
 	      
 	      addWindowListener(li);
 
-	     
+
 	    cardL= new CardLayout();
 		cards = new JPanel(cardL);
 	    cr = new GridBagConstraints();
@@ -112,23 +116,23 @@ import java.util.List;
         accueil = new JPanel(new GridBagLayout());
         mainPan.setOpaque(false);
        accueil.setOpaque(false);
-        
+
         this.setBackground(Color.BLACK);
-        
-       
-        
-       
-	   
-	   
-	    
+
+
+
+
+
+
+
 	    finPan=new FinPartie();
-	    Font f1 = new Font("Serif", Font.BOLD, 18); 
-	    Font f2 = new Font("Serif", Font.BOLD, 18); 
-	    Font f3 = new Font("Serif", Font.BOLD, 18); 
+	    Font f1 = new Font("Serif", Font.BOLD, 18);
+	    Font f2 = new Font("Serif", Font.BOLD, 18);
+	    Font f3 = new Font("Serif", Font.BOLD, 18);
 	    Dimension taille_btns = new Dimension(300,30);
 	      btn1_accueil=new JButton("Partie Solo");
 	      btn1_accueil.setFont(f1);
-	      btn1_accueil.setBackground(Color.LIGHT_GRAY);	      
+	      btn1_accueil.setBackground(Color.LIGHT_GRAY);
 	      btn1_accueil.setPreferredSize(taille_btns);
 	      btn2_accueil=new JButton("Serveur");
 	      btn2_accueil.setFont(f2);
@@ -140,15 +144,15 @@ import java.util.List;
 	      btn3_accueil.setPreferredSize(taille_btns);
 	      btn1_accueil.addActionListener(this);
 	      btn1_accueil.addMouseListener(this);
-	      btn2_accueil.addActionListener(this);
-	      btn2_accueil.addMouseListener(this);
-	      btn3_accueil.addActionListener(this);
-	      btn3_accueil.addMouseListener(this);
-	    
+	      //btn2_accueil.addActionListener(this);
+	      //btn2_accueil.addMouseListener(this);
+	      //btn3_accueil.addActionListener(this);
+	      //btn3_accueil.addMouseListener(this);
+
 	      cr.gridy=0;
 	      cr.insets=new Insets(40,0,0,0);
 	      cr.gridy=1;
-	      
+
 	      accueil.add(btn1_accueil,cr);
 	      cr.insets=new Insets(20,0,0,0);
 	      cr.gridy=2;
@@ -158,7 +162,7 @@ import java.util.List;
 	      accueil.add(btn3_accueil,cr);
 	      cards.add(accueil,"accueil");
 
-	     
+
 	      cards.add(finPan,"victory");
 	      cards.add(gamePan,"jeu");
 	      
@@ -222,7 +226,7 @@ import java.util.List;
 	  {
 	     
 	     Image ii = Toolkit.getDefaultToolkit().getImage(Main.class.getResource("/images/icon.png"));
-	     
+
 	      frame = new Main();
 	      frame.setIconImage(ii);
 	      frame.add(fondLabel);
@@ -240,6 +244,9 @@ import java.util.List;
 		if(source==btn1_accueil)
 		{
 			cardL.last(cards);
+			frame.remove(fondLabel);
+			frame.add(fondLabel2);
+
 		}
 		
 		if(source==btn2_accueil)

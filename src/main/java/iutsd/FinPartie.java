@@ -75,16 +75,14 @@ public class FinPartie extends JPanel implements ActionListener, MouseListener{
 		victoireLabel.setFont(fnt);
 		
 		victoireLabel.setVisible(true);
-		cr.insets=new Insets(10,10,50,10);
 		cr.gridx=0;
 		cr.gridy=0;
 		cr.gridwidth=GridBagConstraints.REMAINDER;
 		this.add(victoireLabel,cr);
-		cr.insets=new Insets(10,10,10,100);
 		cr.gridwidth=1;
 		cr.gridy=1;
 		cr.gridx=0;
-		//cr.insets=new Insets(10,10,10,10);
+		cr.insets=new Insets(10,50,10,10);
 		rejouer.setBackground(Color.LIGHT_GRAY);
 		this.add(rejouer,cr);
 		cr.gridx=1;
@@ -115,6 +113,8 @@ public class FinPartie extends JPanel implements ActionListener, MouseListener{
 			Main.gamePan = new GamePanel();
 			Main.cards.add(Main.gamePan,"jeu");
 			Main.cardL.first(Main.cards);
+			Main.frame.remove(Main.fondLabel2);
+			Main.frame.add(Main.fondLabel);
 		    
 		}
 		
