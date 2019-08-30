@@ -78,33 +78,33 @@ public class Clavier extends JPanel implements ActionListener{
 		GridBagConstraints cr= new GridBagConstraints();
 
 		String resourcesImagesPath = "src/main/resources/images/";
-		
-		 aImg = new ImageIcon(resourcesImagesPath.concat("a.png"));
-	      bImg = new ImageIcon(resourcesImagesPath.concat("b.png"));
-	      zImg = new ImageIcon(resourcesImagesPath.concat("z.png"));
-	      rImg = new ImageIcon(resourcesImagesPath.concat("r.png"));
-	      tImg = new ImageIcon(resourcesImagesPath.concat("t.png"));
-	      yImg = new ImageIcon(resourcesImagesPath.concat("y.png"));
-	      eImg = new ImageIcon(resourcesImagesPath.concat("e.png"));
-	      cImg = new ImageIcon(resourcesImagesPath.concat("c.png"));
-	      dImg = new ImageIcon(resourcesImagesPath.concat("d.png"));
-	      fImg = new ImageIcon(resourcesImagesPath.concat("f.png"));
-	      gImg = new ImageIcon(resourcesImagesPath.concat("g.png"));
-	      hImg = new ImageIcon(resourcesImagesPath.concat("h.png"));
-	      iImg = new ImageIcon(resourcesImagesPath.concat("i.png"));
-	      jImg = new ImageIcon(resourcesImagesPath.concat("j.png"));
-	      kImg = new ImageIcon(resourcesImagesPath.concat("k.png"));
-	      lImg = new ImageIcon(resourcesImagesPath.concat("l.png"));
-	      mImg = new ImageIcon(resourcesImagesPath.concat("m.png"));
-	      nImg = new ImageIcon(resourcesImagesPath.concat("n.png"));
-	      oImg = new ImageIcon(resourcesImagesPath.concat("o.png"));
-	      pImg = new ImageIcon(resourcesImagesPath.concat("p.png"));
-	      qImg = new ImageIcon(resourcesImagesPath.concat("q.png"));
-	      sImg = new ImageIcon(resourcesImagesPath.concat("s.png"));
-	      uImg = new ImageIcon(resourcesImagesPath.concat("u.png"));
-	      vImg = new ImageIcon(resourcesImagesPath.concat("v.png"));
-	      wImg = new ImageIcon(resourcesImagesPath.concat("w.png"));
-	      xImg = new ImageIcon(resourcesImagesPath.concat("x.png"));
+
+		 aImg = new ImageIcon(getClass().getResource("/images/a.png"));
+	      bImg = new ImageIcon(getClass().getResource("/images/b.png"));
+	      zImg = new ImageIcon(getClass().getResource("/images/z.png"));
+	      rImg = new ImageIcon(getClass().getResource("/images/r.png"));
+	      tImg = new ImageIcon(getClass().getResource("/images/t.png"));
+	      yImg = new ImageIcon(getClass().getResource("/images/y.png"));
+	      eImg = new ImageIcon(getClass().getResource("/images/e.png"));
+	      cImg = new ImageIcon(getClass().getResource("/images/c.png"));
+	      dImg = new ImageIcon(getClass().getResource("/images/d.png"));
+	      fImg = new ImageIcon(getClass().getResource("/images/f.png"));
+	      gImg = new ImageIcon(getClass().getResource("/images/g.png"));
+	      hImg = new ImageIcon(getClass().getResource("/images/h.png"));
+	      iImg = new ImageIcon(getClass().getResource("/images/i.png"));
+	      jImg = new ImageIcon(getClass().getResource("/images/j.png"));
+	      kImg = new ImageIcon(getClass().getResource("/images/k.png"));
+	      lImg = new ImageIcon(getClass().getResource("/images/l.png"));
+	      mImg = new ImageIcon(getClass().getResource("/images/m.png"));
+	      nImg = new ImageIcon(getClass().getResource("/images/n.png"));
+	      oImg = new ImageIcon(getClass().getResource("/images/o.png"));
+	      pImg = new ImageIcon(getClass().getResource("/images/p.png"));
+	      qImg = new ImageIcon(getClass().getResource("/images/q.png"));
+	      sImg = new ImageIcon(getClass().getResource("/images/s.png"));
+	      uImg = new ImageIcon(getClass().getResource("/images/u.png"));
+	      vImg = new ImageIcon(getClass().getResource("/images/v.png"));
+	      wImg = new ImageIcon(getClass().getResource("/images/w.png"));
+	      xImg = new ImageIcon(getClass().getResource("/images/x.png"));
 	      
 	      //KeyListener klr = new KeyAdapter();
 	      

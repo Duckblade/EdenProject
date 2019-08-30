@@ -26,7 +26,7 @@ public class GamePanel extends JPanel{
 	FinPartie fp;
 	Word motToFind;
 	Clavier clvr;
-	File ImageFond = new File("src/main/resources/images/pnd1.jpg");
+	File ImageFond = new File(getClass().getResource("/images/pnd1.jpg").getPath());
 	
 	/**
 	 *  Le panneau de jeu est compose d'un Clavier, d'un Pendu et d'un panel affichant le lettre du mot.

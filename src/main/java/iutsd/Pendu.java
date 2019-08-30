@@ -38,18 +38,17 @@ public class Pendu extends JPanel
 			this.setOpaque(false);
 			repaint();
 		this.setPreferredSize(new Dimension (500,340));
-		String resourcesImagesPath = "src/main/resources/images/";
 
-		 penduImg0 = new ImageIcon(resourcesImagesPath.concat("/pendu0.png"));
-	      penduImg1 = new ImageIcon(resourcesImagesPath.concat("pendu1.png"));
-	      penduImg2 = new ImageIcon(resourcesImagesPath.concat("pendu2.png"));
-	      penduImg3 = new ImageIcon(resourcesImagesPath.concat("pendu3.png"));
-	      penduImg4 = new ImageIcon(resourcesImagesPath.concat("pendu4.png"));
-	      penduImg5 = new ImageIcon(resourcesImagesPath.concat("pendu5.png"));
-	      penduImg6 = new ImageIcon(resourcesImagesPath.concat("pendu6.png"));
-	      penduImg7 = new ImageIcon(resourcesImagesPath.concat("pendu7.png"));
-	      penduImg8 = new ImageIcon(resourcesImagesPath.concat("pendu8.png"));
-	      penduImg9 = new ImageIcon(resourcesImagesPath.concat("pendu9.png"));
+		 penduImg0 = new ImageIcon(getClass().getResource("/images/pendu0.png"));
+	      penduImg1 = new ImageIcon(getClass().getResource("/images/pendu1.png"));
+	      penduImg2 = new ImageIcon(getClass().getResource("/images/pendu2.png"));
+	      penduImg3 = new ImageIcon(getClass().getResource("/images/pendu3.png"));
+	      penduImg4 = new ImageIcon(getClass().getResource("/images/pendu4.png"));
+	      penduImg5 = new ImageIcon(getClass().getResource("/images/pendu5.png"));
+	      penduImg6 = new ImageIcon(getClass().getResource("/images/pendu6.png"));
+	      penduImg7 = new ImageIcon(getClass().getResource("/images/pendu7.png"));
+	      penduImg8 = new ImageIcon(getClass().getResource("/images/pendu8.png"));
+	      penduImg9 = new ImageIcon(getClass().getResource("/images/pendu9.png"));
 	      
 	      pendusList.add(penduImg0);
 	      pendusList.add(penduImg1);
@@ -84,14 +83,14 @@ public class Pendu extends JPanel
 		
 		  if(stadePendu<8)
 		  {
-			  Main.playSound(Main.banqueCris[sonAleatoire]);
+			  Main.playSound(Main.banqueCris.get(sonAleatoire));
 			  stadePendu++;
 		  }
 		  else if(stadePendu==8 && aJoueAuSnake==false)
 		  {
-			  Main.playSound(Main.banqueCris[5]);
+			  Main.playSound(Main.banqueCris.get(5));
 			  Word.reponseLabel.setVisible(true);
-			  System.out.println("Vous �tes morts ! Snake game activated !") ;
+			  System.out.println("Vous êtes morts ! Snake game activated !") ;
 			  //snake = new Snake();
 			  
 			  FinPartie fp=new FinPartie();

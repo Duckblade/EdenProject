@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.ArrayList;
 
 /**
@@ -25,9 +26,8 @@ String separateur="\n";
 public ExtractLine(){
 	
 	// lecture du fichier texte
-	
 	try {
-	InputStream ips = new FileInputStream("src/main/resources/listeMots.txt");
+	InputStream ips = getClass().getResourceAsStream("/listeMots.txt");
 	InputStreamReader ipsr = new InputStreamReader(ips);
 	BufferedReader br = new BufferedReader(ipsr);
 

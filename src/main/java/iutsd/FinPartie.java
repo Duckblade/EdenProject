@@ -10,6 +10,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.*;
 
 
@@ -26,7 +29,7 @@ public class FinPartie extends JPanel implements ActionListener, MouseListener{
 	JButton retourMenu, rejouer,quitter;
 	Font fnt = new Font("Serif", Font.PLAIN, 25);
 	GridBagConstraints cr;
-	String criVictoire[];
+	List<String> criVictoire;
 	
 	
 	
@@ -40,20 +43,20 @@ public class FinPartie extends JPanel implements ActionListener, MouseListener{
 		this.setLayout(new GridBagLayout());
 		this.setOpaque(false);
 		
-		victoireLabel=new JLabel("Dommage! Le mot � trouver �tait \""+Word.word+"\"!");
+		victoireLabel=new JLabel("Dommage! Le mot à trouver était \""+Word.word+"\"!");
 		victoireLabel.setForeground(Color.RED);
 		
 		if(Clavier.vicBoo==true){
 			repaint();
 			int sonAleatoire=(int)(Math.random()*4);
-			criVictoire=new String[4];
-			criVictoire[0]="hurrah10.wav";
-			criVictoire[1]="hurrah12.wav";
-			criVictoire[2]="hurrah14.wav";
-			criVictoire[3]="hurrah15.wav";
-			Main.playSound(criVictoire[sonAleatoire]);
+			criVictoire=new ArrayList<String>();
+			criVictoire.add("/music/hurrah10.wav");
+			criVictoire.add("/music/hurrah12.wav");
+			criVictoire.add("/music/hurrah14.wav");
+			criVictoire.add("/music/hurrah15.wav");
+			Main.playSound(criVictoire.get(sonAleatoire));
 			//SocketClient.sendVictorySignal();
-			victoireLabel.setText("F�licitations! Vous avez gagn� en trouvant le mot \""+Word.word+"\" !");
+			victoireLabel.setText("Félicitations! Vous avez gagné en trouvant le mot \""+Word.word+"\" !");
 			victoireLabel.setForeground(Color.green);
 			Clavier.vicBoo=false;
 		}
@@ -97,7 +100,7 @@ public class FinPartie extends JPanel implements ActionListener, MouseListener{
 	
 	public void actionPerformed(ActionEvent e){
 		Object source=e.getSource();	 
-		Main.playSound("sonAppuiBouton.wav");
+		Main.playSound("/music/sonAppuiBouton.wav");
 		
 		if(source==rejouer)
 		{
@@ -132,7 +135,7 @@ public class FinPartie extends JPanel implements ActionListener, MouseListener{
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		Main.playSound("beep.wav");
+		Main.playSound("/music/beep.wav");
 		
 	}
 

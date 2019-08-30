@@ -15,6 +15,9 @@ import java.awt.Image;
 import java.awt.Insets;
 import java.awt.Toolkit;
 import java.awt.event.*;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 /** 
  * Classe principale du jeu. Gestion de l'ecran de depart, des sons, et de la fenetre de jeu.
@@ -69,7 +72,7 @@ import java.awt.event.*;
 	    private GridBagConstraints cr ;
 	    
 	    //Tableau qui stocke les cris du pendu
-		static String banqueCris[];
+		static List<String> banqueCris;
 
 	    
 	
@@ -80,15 +83,16 @@ import java.awt.event.*;
 		  
 	     super("Projet Eden");
 	     
-	    banqueCris=new String[6]; 
-	 	banqueCris[0]="src/main/resources/music/incapacitatedinjury09.wav";
-		banqueCris[1]="src/main/resources/music/incapacitatedinjury10.wav";
-		banqueCris[2]="src/main/resources/music/incapacitatedinjury11.wav";
-		banqueCris[3]="src/main/resources/music/incapacitatedinjury06.wav";
-		banqueCris[4]="src/main/resources/music/deathscream05.wav";
-		banqueCris[5]="src/main/resources/music/exclamation01.wav";
+	    banqueCris=new ArrayList<String>();
+	 	banqueCris.add("/music/incapacitatedinjury09.wav");
+	    banqueCris.add("/music/incapacitatedinjury10.wav");
+	    banqueCris.add("/music/incapacitatedinjury11.wav");
+	    banqueCris.add("/music/incapacitatedinjury06.wav");
+	    banqueCris.add("/music/deathscream05.wav");
+	    banqueCris.add("/music/exclamation01.wav");
+
 		
-	     playSound("src/main/resources/music/trololo.wav");
+	     playSound("/music/trololo.wav");
 	      WindowListener li = new WindowAdapter() 
 	      {
 	         public void windowClosing(WindowEvent e)
@@ -195,7 +199,7 @@ import java.awt.event.*;
 		    public void run() {
 		        try {
 		          Clip clip = AudioSystem.getClip();
-		          AudioInputStream inputStream = AudioSystem.getAudioInputStream(Main.class.getResourceAsStream("Musique/"+soundFile));
+		          AudioInputStream inputStream = AudioSystem.getAudioInputStream(Main.class.getResourceAsStream(soundFile));
 		          clip.open(inputStream);
 		          clip.start(); 
 		        } catch (Exception e) {
@@ -217,7 +221,7 @@ import java.awt.event.*;
 	public static void main(String [] args)
 	  {
 	     
-	     Image ii = Toolkit.getDefaultToolkit().getImage("src/main/resources/images/icon.png");
+	     Image ii = Toolkit.getDefaultToolkit().getImage(Main.class.getResource("/images/icon.png"));
 	     
 	      frame = new Main();
 	      frame.setIconImage(ii);
@@ -231,7 +235,7 @@ import java.awt.event.*;
 	public void actionPerformed(ActionEvent ev)
 	{
 		Object source=ev.getSource();
-		playSound("src/main/resources/music/sonAppuiBouton.wav");
+		playSound("/music/sonAppuiBouton.wav");
 	
 		if(source==btn1_accueil)
 		{
@@ -293,7 +297,7 @@ import java.awt.event.*;
 	 * Permet de lancer un son a chaque survol de bouton
 	 */
 	public void mouseEntered(MouseEvent arg0) {
-		playSound("src/main/resources/music/beep.wav");
+		playSound("/music/beep.wav");
 		
 	}
 
